@@ -24,7 +24,7 @@ const html = () => {
 
 // Scss preprocessor
 const styles = () => {
-  return gulp.src('src/scss/*.scss')
+  return gulp.src('src/scss/**/*.scss')
   .pipe(gulpIf(isDevelopment, sourcemap.init()))
   .pipe(gulpIf(!isDevelopment, autoprefixer()))
   .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
@@ -34,9 +34,9 @@ const styles = () => {
 };
 
 // File watch
-const fileWatch = () => {
+const watcher = () => {
   gulp.watch('src/*.html', gulp.series(html));
-  gulp.watch('src/scss/*.scss', gulp.series(styles));
+  gulp.watch('src/scss/**/*.scss', gulp.series(styles));
 };
 
 // BrowserSync
@@ -55,7 +55,7 @@ exports.default = gulp.series(
   html,
   styles,
   gulp.parallel(
-    fileWatch,
+    watcher,
     server
   )
 );
