@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp --production"
+  },
+  "browserslist": [
+    "last 5 versions",
+    "> 1%",
+    "not dead"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "yargs": "^16.2.0"
+  }
+}
